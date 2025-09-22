@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhaar Verification - Pietos Solutions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="https://pietos.com/wp-content/uploads/2020/08/Untitled-design-3-140x41.png" alt="Pietos Solutions Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="#" onclick="showDashboard()">Dashboard</a></li>
+            </ul>
+            
+            <div class="auth-buttons" id="authButtons">
+                <button class="login-btn" onclick="openAuthModal('login')">Login</button>
+                <button class="register-btn" onclick="openAuthModal('register')">Register</button>
+            </div>
+            
+            <div class="user-info" id="userInfo">
+                <span>Welcome, <strong id="userName">User</strong>!</span>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <a href="index.html" class="back-btn">&larr; Back to Home</a>
+        
+        <div class="verification-container">
+            <h2>Aadhaar Verification</h2>
+            
+            <div class="aadhaar-form">
+                <div class="form-group">
+                    <label for="aadhaarNumber">Enter Aadhaar Number</label>
+                    <input 
+                        type="text" 
+                        id="aadhaarNumber" 
+                        placeholder="7414 8745 7845" 
+                        maxlength="14"
+                        oninput="formatAadhaar(this)"
+                    >
+                </div>
+                
+                <button id="verifyBtn" class="verify-btn" onclick="verifyAadhaar()">Verify Aadhaar</button>
+            </div>
+            
+            <div id="message" class="message hidden"></div>
+            
+            <div id="resultContainer" class="result-container">
+                <h3>Aadhaar Verification Result</h3>
+                
+                <div class="result-details">
+                    <div class="result-item">
+                        <label>Aadhaar Number</label>
+                        <span id="resultAadhaarNumber"></span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <label>Status</label>
+                        <span id="resultStatus"></span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <label>Name</label>
+                        <span id="resultName"></span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <label>Gender</label>
+                        <span id="resultGender"></span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <label>Age</label>
+                        <span id="resultAge"></span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <label>State</label>
+                        <span id="resultState"></span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <label>Mobile Linked</label>
+                        <span id="resultMobile"></span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <label>Verification Date</label>
+                        <span id="resultDate"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Pietos Solutions Pvt. Ltd.</h3>
+                <p>Leading provider of secure document verification services. We ensure authenticity and reliability in every verification process.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <p><a href="index.html#services">Aadhaar Verification</a></p>
+                <p><a href="index.html#services">PAN Verification</a></p>
+                <p><a href="index.html#services">Driving License Check</a></p>
+                <p><a href="index.html#services">UAN Verification</a></p>
+                <p><a href="index.html#services">Court Records</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>透 contact@pietos.com</p>
+                <p>到 +91 11 49074103, +91 1149074103</p>
+                <p>召 166 A, 1st Floor, Pratap Nagar, Mayur Vihar Phase I Delhi 110091</p>
+                <p>倹 www.pietos.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pietos Solutions Pvt. Ltd.. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
